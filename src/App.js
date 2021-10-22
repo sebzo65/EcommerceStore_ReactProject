@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.module.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import firestore from "./Services/firestore";
+import Nav from "./Components/Nav";
+import Home from "./Containers/Home";
+// import { useState, useEffect } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route path="/products">
+          <h1>Product Page</h1>
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
