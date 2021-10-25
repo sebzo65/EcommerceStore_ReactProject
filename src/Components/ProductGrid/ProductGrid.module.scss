@@ -1,0 +1,24 @@
+.productGrid {
+  margin-top: 10px;
+
+  .product_Card {
+    height: 30vh;
+    width: 15vw;
+    margin-left: 17%;
+
+    .product_img {
+      height: 40vh;
+      width: 15vw;
+    }
+  }
+
+  .product_cardBody {
+    background-color: crimson;
+    border: 2px solid black;
+  }
+
+  .product_cardBodyBlue {
+    background-color: #4ab8f9;
+    border: 2px solid black;
+  }
+}

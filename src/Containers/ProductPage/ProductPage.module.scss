@@ -1,0 +1,64 @@
+.ProductPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background-color: crimson;
+}
+
+.ProductCard {
+  border: 3px solid white;
+  padding: 20px;
+  border-radius: 7px;
+
+  .List_Card {
+    height: 40vh;
+    width: 15vw;
+    margin-left: 25%;
+
+    &:hover .List_img {
+      opacity: 0.3;
+    }
+
+    &:hover .List_cardBody {
+      opacity: 1;
+    }
+
+    .List_img {
+      height: 40vh;
+      width: 15vw;
+      opacity: 1;
+      display: block;
+      width: 100%;
+      transition: 0.5s ease;
+      backface-visibility: hidden;
+    }
+  }
+
+  .List_cardBody {
+    text-align: center;
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+    &_title {
+      background-color: crimson;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+
+      &_link {
+        text-decoration: none;
+        color: white;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -20,12 +20,14 @@ const Carousel = () => {
         </MDBCarouselItem>
         <MDBCarouselItem>
           <MDBCarouselElement
+            className={styles.CarouselElement}
             src="https://wallpapercave.com/wp/wp2386759.jpg"
             alt="..."
           />
         </MDBCarouselItem>
         <MDBCarouselItem>
           <MDBCarouselElement
+            className={styles.CarouselElement}
             src="https://wallpapercave.com/wp/wp4565982.jpg"
             alt="..."
           />
