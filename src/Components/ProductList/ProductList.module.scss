@@ -1,0 +1,20 @@
+.ProductList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40em;
+  border: 1px solid black;
+}
+
+.ProductCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65vw;
+  height: 65vh;
+
+  &_img {
+    width: 65vw;
+    height: 65vh;
+  }
+}

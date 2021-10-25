@@ -2,6 +2,46 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { findProduct } from "../../Services/ProductArray";
+import styles from "./ProductList.module.scss";
+import {
+  MDBCard,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+} from "mdb-react-ui-kit";
+
+const ProductCard = ({ product }) => {
+  return (
+    <div>
+      <MDBCard className={styles.ProductCard}>
+        <MDBRow className="g-0">
+          <MDBCol md="4">
+            <MDBCardImage
+              className={styles.ProductCard_img}
+              src={product.imageURL}
+              alt="..."
+              fluid
+            />
+          </MDBCol>
+          <MDBCol md="8">
+            <MDBCardBody>
+              <MDBCardTitle>{product.name}</MDBCardTitle>
+              <MDBCardText>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </MDBCardText>
+              <MDBCardText>Price: ${product.price}</MDBCardText>
+            </MDBCardBody>
+          </MDBCol>
+        </MDBRow>
+      </MDBCard>
+    </div>
+  );
+};
 
 const ProductList = () => {
   const { id } = useParams();
@@ -21,93 +61,10 @@ const ProductList = () => {
   }
 
   return (
-    <div>
-      <h2>{product.name}</h2>
-      <p>Price: ${product.price}</p>
-      <p>Game Id: {product.id}</p>
+    <div className={styles.ProductList}>
+      <ProductCard product={product} key={id} />
     </div>
   );
-  //     <MDBRow className={styles.ProductList}>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/71tuySY5dIL._AC_SL1500_.jpg"
-  //             alt="Luigi's Mansion 3"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Luigi's Mansion 3</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/81USSJYOtYL._AC_SL1500_.jpg"
-  //             alt="Super Smash Bros Ultimate"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Super Smash Bros Ultimate</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/919O1N5pvZL._AC_SL1500_.jpg"
-  //             alt="Fire Emblem Three Houses"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Fire Emblem Three Houses</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/81INpQa0LZL._AC_SL1500_.jpg"
-  //             alt="Splatoon 2"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Splatoon 2</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/81INpQa0LZL._AC_SL1500_.jpg"
-  //             alt="Splatoon 2"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Splatoon 2</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //       <MDBCol>
-  //         <MDBCard className={styles.List_Card}>
-  //           <MDBCardImage
-  //             className={styles.List_img}
-  //             src="https://m.media-amazon.com/images/I/81INpQa0LZL._AC_SL1500_.jpg"
-  //             alt="Splatoon 2"
-  //             position="top"
-  //           />
-  //           <MDBCardBody className={styles.List_cardBody}>
-  //             <MDBCardTitle>Splatoon 2</MDBCardTitle>
-  //           </MDBCardBody>
-  //         </MDBCard>
-  //       </MDBCol>
-  //     </MDBRow>
-  //   );
 };
 
 export default ProductList;
