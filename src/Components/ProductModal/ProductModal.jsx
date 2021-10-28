@@ -37,7 +37,7 @@ const ProductModalCard = ({ product }) => {
             />
             <MDBModalHeader className={styles.ProductModalCard_Title}>
               <MDBModalTitle>{product.variant}</MDBModalTitle>
-              <MDBBtn className="btn-close" onClick={toggleShow}></MDBBtn>
+              <MDBBtn className={styles.BtnClose} onClick={toggleShow}></MDBBtn>
             </MDBModalHeader>
           </MDBModalContent>
         </MDBModalDialog>

@@ -15,6 +15,20 @@ import {
 } from "mdb-react-ui-kit";
 
 const ProductCard = ({ product }) => {
+  const [count, setCount] = useState(0);
+
+  const increment = (event) => {
+    if (count !== product.quantity) {
+      setCount((prevCount) => prevCount + 1);
+    }
+  };
+
+  const decrement = (event) => {
+    if (count !== 0) {
+      setCount((prevCount) => prevCount - 1);
+    }
+  };
+
   return (
     <div>
       <MDBCard className={styles.ProductCard}>
@@ -32,6 +46,13 @@ const ProductCard = ({ product }) => {
               <MDBCardTitle>{product.name}</MDBCardTitle>
               <MDBCardText>{product.desc}</MDBCardText>
               <MDBCardText>Price: ${product.price}</MDBCardText>
+              <button className={styles.CounterBtn} onClick={decrement}>
+                -
+              </button>
+              <span className={styles.CounterSpan}>{count}</span>
+              <button className={styles.CounterBtn} onClick={increment}>
+                +
+              </button>
             </MDBCardBody>
           </MDBCol>
         </MDBRow>

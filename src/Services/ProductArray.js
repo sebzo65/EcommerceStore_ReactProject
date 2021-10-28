@@ -33,3 +33,16 @@ export const findProduct = async (id) => {
   //T -> Customer Object
   return cleanRecord(docSnap);
 };
+
+//Get a specific homeImg from firestore
+export const findHomeProduct = async (id) => {
+  //Collection Reference
+  const colRef = firestore.collection("homeProducts");
+  //Document Reference
+  const docRef = colRef.doc(id);
+  //Promise<DocumentSnapshot> -> DocumentSnapshot
+  const docSnap = await docRef.get();
+
+  //T -> Customer Object
+  return cleanRecord(docSnap);
+};

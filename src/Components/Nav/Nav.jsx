@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.scss";
 <link rel="preconnect" href="https://fonts.googleapis.com"></link>;
+<link
+  rel="stylesheet"
+  href="path/to/font-awesome/css/font-awesome.min.css"
+></link>;
 
 const Nav = () => {
   return (
@@ -17,6 +21,7 @@ const Nav = () => {
             Products
           </Link>
         </li>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       </ul>
     </div>
   );

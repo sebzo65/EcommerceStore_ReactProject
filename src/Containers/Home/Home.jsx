@@ -1,11 +1,11 @@
 import Carousel from "../../Components/Carousel";
-import ProductGrid from "../../Components/ProductGrid";
+import ProductGridBackdrop from "../../Components/ProductGrid";
 
 const Home = () => {
   return (
     <div>
       <Carousel />
-      <ProductGrid />
+      <ProductGridBackdrop />
     </div>
   );
 };
