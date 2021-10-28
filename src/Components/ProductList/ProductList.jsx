@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { findProduct } from "../../Services/ProductArray";
 import styles from "./ProductList.module.scss";
+import ProductModal from "../ProductModal";
 import {
   MDBCard,
   MDBCardTitle,
@@ -29,16 +30,13 @@ const ProductCard = ({ product }) => {
           <MDBCol md="8">
             <MDBCardBody>
               <MDBCardTitle>{product.name}</MDBCardTitle>
-              <MDBCardText>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </MDBCardText>
+              <MDBCardText>{product.desc}</MDBCardText>
               <MDBCardText>Price: ${product.price}</MDBCardText>
             </MDBCardBody>
           </MDBCol>
         </MDBRow>
       </MDBCard>
+      <ProductModal />
     </div>
   );
 };

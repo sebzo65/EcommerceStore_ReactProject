@@ -1,0 +1,44 @@
+.ProductModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+}
+
+.ModalCardButton {
+  background-color: white;
+  color: crimson;
+  border: 1px solid crimson;
+
+  &:hover {
+    background-color: crimson;
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.ProductModalCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65vw;
+  height: 85vh;
+
+  .ModalCard_img {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 40vw;
+  }
+
+  &_Title {
+    background-color: crimson;
+    color: white;
+  }
+
+  .BtnClose {
+    color: white;
+    background-color: white;
+  }
+}
