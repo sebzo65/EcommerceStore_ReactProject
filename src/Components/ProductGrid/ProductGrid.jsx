@@ -21,7 +21,7 @@ const ProductGrid = ({ product }) => {
             <MDBCardImage
               className={styles.product_img}
               src={product.imageURL}
-              alt="Luigi's Mansion 3"
+              alt={product.name}
               position="top"
             />
             <MDBCardBody className={styles.product_cardBody}>

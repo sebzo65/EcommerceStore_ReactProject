@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
             <MDBCardImage
               className={styles.List_img}
               src={product.imageURL}
-              alt="Nintendo Switch game"
+              alt={product.name}
               position="top"
             />
             <MDBCardBody className={styles.List_cardBody}>
@@ -56,12 +56,6 @@ const ProductPage = () => {
 
     populateProducts();
   }, []);
-
-  // const filteredProducts = products
-  //   .filter((product) => {
-  //     return `${product.name} ${product.price}`.includes(name);
-  //   })
-  //   .slice(0, limit);
 
   return (
     <div className={styles.ProductPage}>

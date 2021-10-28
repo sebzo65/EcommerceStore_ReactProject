@@ -46,3 +46,12 @@ export const findHomeProduct = async (id) => {
   //T -> Customer Object
   return cleanRecord(docSnap);
 };
+
+//creating record in database for cart
+export const createCartItem = async (id) => {
+  // CollectionReference
+  const colRef = firestore.collection("cart");
+  // DocumentReference
+  const docRef = colRef.doc();
+  await docRef.set(id);
+};

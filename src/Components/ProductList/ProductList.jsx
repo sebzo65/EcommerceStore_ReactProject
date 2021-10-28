@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { findProduct } from "../../Services/ProductArray";
+import { createCartItem } from "../../Services/ProductArray";
 import styles from "./ProductList.module.scss";
 import ProductModal from "../ProductModal";
 import {
@@ -29,6 +30,12 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const handleClick = (e) => {
+    if (count != 0) {
+      createCartItem(product);
+    }
+  };
+
   return (
     <div>
       <MDBCard className={styles.ProductCard}>
@@ -52,6 +59,9 @@ const ProductCard = ({ product }) => {
               <span className={styles.CounterSpan}>{count}</span>
               <button className={styles.CounterBtn} onClick={increment}>
                 +
+              </button>
+              <button onClick={handleClick} className={styles.cartBtn}>
+                Add to Cart
               </button>
             </MDBCardBody>
           </MDBCol>
