@@ -34,6 +34,13 @@ export const findProduct = async (id) => {
   return cleanRecord(docSnap);
 };
 
+//Updating record in database
+export const updateProduct = async (id, partial) => {
+  const colRef = firestore.collection("products");
+  const docRef = colRef.doc(id);
+  await docRef.update(partial);
+};
+
 //Get a specific homeImg from firestore
 export const findHomeProduct = async (id) => {
   //Collection Reference
