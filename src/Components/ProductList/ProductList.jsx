@@ -19,6 +19,7 @@ import {
 const ProductCard = ({ product }) => {
   const [count, setCount] = useState(0);
   const [favourite, setFavourite] = useState(false);
+  const [cartqty, setCartqty] = useState(count);
 
   //Handle click for quantity incrementor
   const increment = (event) => {
@@ -33,10 +34,11 @@ const ProductCard = ({ product }) => {
     }
   };
   //Handles click event for the cart
-  const handleClick = (e) => {
-    if (count != 0) {
-      createCartItem(product);
+  const handleClick = async (e) => {
+    if (count !== 0) {
+      setCartqty(cartqty);
     }
+    await createCartItem(product);
   };
 
   //Function that changes boolean value of 'favourite' in
